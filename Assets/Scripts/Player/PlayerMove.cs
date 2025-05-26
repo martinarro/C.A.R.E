@@ -9,9 +9,10 @@ public class MovePlayer : MonoBehaviour
     public bool isGrounded = true;
     private Rigidbody rb;
 
-
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         rb = GetComponent<Rigidbody>();
     }
 
