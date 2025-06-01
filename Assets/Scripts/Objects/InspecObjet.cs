@@ -7,6 +7,10 @@ public class InspecObjet : MonoBehaviour
 {
     [SerializeField] public GameObject objectInspect;
     [SerializeField] public GameObject detailObject;
+    [SerializeField] public InventoryManager inventoryManager;
+
+    [SerializeField] public DetailObject detailObjectText;
+    public bool isCounted = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +34,14 @@ public class InspecObjet : MonoBehaviour
             {
                 detailObject.SetActive(true);
                 objectInspect.SetActive(false);
+                if (isCounted == false)
+                {
+                    inventoryManager.AddObject(gameObject);
+                    Debug.Log(inventoryManager.countObject);
+                    isCounted = true;
+
+                }
+                
             }
             
              if (Input.GetKey(KeyCode.C))
