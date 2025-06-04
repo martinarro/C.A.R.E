@@ -8,6 +8,8 @@ public class NavMeshShadow : MonoBehaviour
     [SerializeField] public Transform pointA;
     [SerializeField] public Transform pointB;
     [SerializeField] public NavMeshAgent agent;
+
+    [SerializeField] public float health = 100;
     public Transform actualPoint;
 
 
@@ -38,6 +40,15 @@ public class NavMeshShadow : MonoBehaviour
         }
 
 
+    }
+
+    public void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     
