@@ -27,7 +27,7 @@ public class InventoryManager : MonoBehaviour
     public void AddObject(GameObject objectFinded)
     {
         countObject++;
-        countText.text = "OE: " + countObject;
+        countText.text = "" + countObject;
         inventory.Add(objectFinded);
     }
 
@@ -42,13 +42,12 @@ public class InventoryManager : MonoBehaviour
                 {
                 detailObjectsTexts.text = "";
                     foreach (GameObject obj in inventory)
-                {
+                    {
                     DetailObject detalle = obj.GetComponent<DetailObject>();
                     Debug.Log(detalle.detailObject);
                     detailObjectsTexts.text += "• " + detalle.detailObject + "\n";
 
-
-                }
+                    }
                 }
         }
     }

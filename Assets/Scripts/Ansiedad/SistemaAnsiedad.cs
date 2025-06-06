@@ -11,6 +11,7 @@ public class SistemaAnsiedad : MonoBehaviour
 
     [Header("Interfaz")]
     public Image BarraAnsiedad;
+    public CanvasGroup Overlay;
 
     private void Update()
     {
@@ -23,6 +24,26 @@ public class SistemaAnsiedad : MonoBehaviour
         if (ansiedad > ansiedadMaxima)
         {
             ansiedad = ansiedadMaxima;
+        }
+
+        if (ansiedad < 500)
+        {
+            Overlay.alpha = 0f;
+        }
+
+        if (ansiedad > 500 && ansiedad < 999)
+        {
+            Overlay.alpha = 0.5f;
+        }
+
+        if (ansiedad > 1000)
+        {
+            Overlay.alpha = 1f;
+        }
+
+        if (ansiedad >= ansiedadMaxima)
+        { 
+            //HACER MUERTE ACA, NO TOCAR
         }
 
     }

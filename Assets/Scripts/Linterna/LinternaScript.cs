@@ -41,7 +41,7 @@ public class LinternaScript : MonoBehaviour
         }
 
         //Input de teclado
-        if (Input.GetButtonDown("Linterna"))
+        if (Input.GetMouseButtonDown(0))
         {
             if (luzLinterna.enabled)
             {

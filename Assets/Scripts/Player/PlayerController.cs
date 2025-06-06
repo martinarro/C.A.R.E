@@ -66,14 +66,14 @@ public class PlayerController : MonoBehaviour
         camRight = camRight.normalized;
     }
 
-    //Funcion para las habilidades del Player.
+    //Funcion para las habilidades del Player (Salto descartado por ahora).
     public void PlayerSkills()
     {
-        if (player.isGrounded && Input.GetButtonDown("Jump"))
+        /*if (player.isGrounded && Input.GetButtonDown("Jump"))
         {
             fallVelocity = jumpForce;
             movePlayer.y = fallVelocity;
-        }
+        }*/
     }
 
 
