@@ -28,8 +28,16 @@ public class LinternaScript : MonoBehaviour
 
     private bool estaParpadeando = false;
 
+    //ATAQUE
+    public GameObject luzDetector;
+    public int rango = 8;
+
+
     void Update()
     {
+        
+
+
         //Recibir y bajar la ansiedad, toma la funcion desde el script SistemaAnsiedad
         if (!luzLinterna.enabled)
         {
@@ -46,38 +54,53 @@ public class LinternaScript : MonoBehaviour
             if (luzLinterna.enabled)
             {
                 luzLinterna.enabled = false;
+                luzDetector.SetActive(false);
             }
             else if (!luzLinterna.enabled && energiaActual >= 10)
             {
                 luzLinterna.enabled = true;
+                luzDetector.SetActive(true);
             }
         }
+
+    /*
+        //Ataque con linterna
+        RaycastHit hit;
+        if (Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out hit, rango))
+        {
+            if (hit.collider.GetComponent<NavMeshShadow>() == true)
+            {
+                hit.collider.GetComponent<NavMeshShadow>().enabled = false;
+                Destroy(hit.collider.gameObject, 1);
+            }
+        }
+        */
 
         //Define la velocidad de consumo y comienza la corrutina de parpadeo
-        if (luzLinterna.enabled)
-        {
-            energiaActual -= Time.deltaTime * velocidadConsumo;
+            if (luzLinterna.enabled)
+            {
+                energiaActual -= Time.deltaTime * velocidadConsumo;
 
-            if (energiaActual <= umbralParpadeo && !estaParpadeando)
-            {
-                StartCoroutine(ParpadearAntesDeApagar());
-            }
+                if (energiaActual <= umbralParpadeo && !estaParpadeando)
+                {
+                    StartCoroutine(ParpadearAntesDeApagar());
+                }
 
-            if (energiaActual <= 0)
-            {
-                energiaActual = 0;
-                luzLinterna.enabled = false;
-                estaParpadeando = false;
+                if (energiaActual <= 0)
+                {
+                    energiaActual = 0;
+                    luzLinterna.enabled = false;
+                    estaParpadeando = false;
+                }
             }
-        }
-        else
-        {
-            energiaActual += Time.deltaTime * velocidadRecarga;
-            if (energiaActual >= energiaMaxima)
+            else
             {
-                energiaActual = energiaMaxima;
+                energiaActual += Time.deltaTime * velocidadRecarga;
+                if (energiaActual >= energiaMaxima)
+                {
+                    energiaActual = energiaMaxima;
+                }
             }
-        }
 
         //Cambia el alpha cuando queda poca bateria
         if (energiaActual <= 15)
