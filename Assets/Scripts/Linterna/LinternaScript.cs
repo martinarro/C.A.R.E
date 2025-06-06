@@ -79,15 +79,18 @@ public class LinternaScript : MonoBehaviour
             }
         }
 
-        //Cambia el color a rojo cuando queda poca bateria
-        if (energiaActual <= 10)
+        //Cambia el alpha cuando queda poca bateria
+        if (energiaActual <= 15)
         {
-            Color colorOriginal = barraBateria.color;
-            barraBateria.color = Color.red;
+            Color colorActual = barraBateria.color;
+            colorActual.a = 0.1f; // Valor entre 0 y 1
+            barraBateria.color = colorActual;
         }
-        else if (energiaActual >= 10)
+        else if (energiaActual >= 15)
         {
-            barraBateria.color = Color.green;
+            Color colorActual = barraBateria.color;
+            colorActual.a = 1f; // Valor entre 0 y 1
+            barraBateria.color = colorActual;
         }
 
         barraBateria.fillAmount = energiaActual / energiaMaxima;
@@ -99,8 +102,6 @@ public class LinternaScript : MonoBehaviour
         estaParpadeando = true;
 
         float tiempoRestante = duracionParpadeo;
-        Color colorOriginal = barraBateria.color;
-        barraBateria.color = Color.red;
 
         while (tiempoRestante > 0 && energiaActual > 0)
         {
@@ -113,8 +114,6 @@ public class LinternaScript : MonoBehaviour
 
         luzLinterna.enabled = false;
         barraBateria.enabled = true;
-        barraBateria.color = colorOriginal;
-
         estaParpadeando = false;
     }
 }
