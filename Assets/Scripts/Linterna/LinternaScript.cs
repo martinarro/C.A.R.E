@@ -7,6 +7,11 @@ public class LinternaScript : MonoBehaviour
 {
     public Light luzLinterna;
 
+    [Header("Ansiedad")]
+    public SistemaAnsiedad sistemaAnsiedad;
+    public float cargaAnsiedad;
+    public float descargaAnsiedad;
+
     [Header("Bateria")]
     public float energiaActual = 100;
     public float energiaMaxima = 100;
@@ -25,6 +30,16 @@ public class LinternaScript : MonoBehaviour
 
     void Update()
     {
+        //Recibir y bajar la ansiedad, toma la funcion desde el script SistemaAnsiedad
+        if (!luzLinterna.enabled)
+        {
+            sistemaAnsiedad.RecibirAnsiedad(cargaAnsiedad * Time.deltaTime);
+        }
+        else
+        {
+            sistemaAnsiedad.BajarAnsiedad(descargaAnsiedad * Time.deltaTime);
+        }
+
         //Input de teclado
         if (Input.GetButtonDown("Linterna"))
         {

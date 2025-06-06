@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Floor
   - escalera
+  - Linterna
   layers:
   - Default
   - TransparentFX
