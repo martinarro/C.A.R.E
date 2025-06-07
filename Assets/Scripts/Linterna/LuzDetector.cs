@@ -5,20 +5,24 @@ using UnityEngine;
 public class LuzDetector : MonoBehaviour
 {
     public int rango = 8;
+    public LinternaScript linternaScript; // ← Se asigna desde el Inspector
 
     void Update()
-    {   
-        Debug.DrawRay(transform.position, transform.right * rango, Color.blue);  
+    {
+        if (!linternaScript.luzLinterna.enabled)
+            return;
 
-        // Ataque con linterna
+        Debug.DrawRay(transform.position, transform.forward * rango, Color.red);
+
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up, out hit, rango))
+        if (Physics.Raycast(transform.position, transform.forward, out hit, rango, ~0))
         {
+            Debug.Log(hit.collider.name);
+
             NavMeshShadow enemigo = hit.collider.GetComponentInParent<NavMeshShadow>();
-            if (enemigo)
+            if (enemigo != null)
             {
-                Debug.Log("LE PEGUE");
-                Debug.Log(hit.collider.name);
+                Debug.Log("ENEMIGO");
                 enemigo.enabled = false;
                 Destroy(enemigo.gameObject, 1);
             }

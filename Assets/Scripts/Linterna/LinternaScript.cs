@@ -28,9 +28,10 @@ public class LinternaScript : MonoBehaviour
 
     private bool estaParpadeando = false;
 
-    //ATAQUE
+    /*/ATAQUE
     public GameObject luzDetector;
     public int rango = 8;
+    */
 
 
     void Update()
@@ -52,12 +53,12 @@ public class LinternaScript : MonoBehaviour
             if (luzLinterna.enabled)
             {
                 luzLinterna.enabled = false;
-                luzDetector.SetActive(false);
+//                luzDetector.SetActive(false);
             }
             else if (!luzLinterna.enabled && energiaActual >= 10)
             {
                 luzLinterna.enabled = true;
-                luzDetector.SetActive(true);
+  //              luzDetector.SetActive(true);
             }
         }
 
