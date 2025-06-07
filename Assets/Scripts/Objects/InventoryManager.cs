@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using System.Security.Cryptography.X509Certificates;
+using UnityEngine.SceneManagement;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -21,6 +22,11 @@ public class InventoryManager : MonoBehaviour
     void Update()
     {
         ShowInventory();
+
+        if (countObject >= 4)
+        {
+            SceneManager.LoadScene("MenuFinPrototipo");
+        }
     }
 
     public void AddObject(GameObject objectFinded)
