@@ -39,7 +39,6 @@ public class NavMeshShadow : MonoBehaviour
 
         }
 
-
     }
 
     public void TakeDamage(float damage)

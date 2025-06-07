@@ -1,13 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class SistemaAnsiedad : MonoBehaviour
 {
+
     [Header("Valores")]
-    public float ansiedad = 0;
-    public float ansiedadMaxima = 10000;
+    public float ansiedad;
+    public float ansiedadMaxima;
 
     [Header("Interfaz")]
     public Image BarraAnsiedad;
@@ -26,24 +28,26 @@ public class SistemaAnsiedad : MonoBehaviour
             ansiedad = ansiedadMaxima;
         }
 
-        if (ansiedad < 500)
+        if (ansiedad < 1000)
         {
             Overlay.alpha = 0f;
         }
 
-        if (ansiedad > 500 && ansiedad < 999)
+        if (ansiedad > 1000 && ansiedad < 1249)
         {
-            Overlay.alpha = 0.5f;
+            Overlay.alpha = 0.7f;
         }
 
-        if (ansiedad > 1000)
+        if (ansiedad > 1250)
         {
             Overlay.alpha = 1f;
         }
 
         if (ansiedad >= ansiedadMaxima)
-        { 
-            //HACER MUERTE ACA, NO TOCAR
+        {
+            SceneManager.LoadScene("MenuDerrota");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
 
     }

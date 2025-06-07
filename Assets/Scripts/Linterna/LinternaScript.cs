@@ -36,8 +36,6 @@ public class LinternaScript : MonoBehaviour
     void Update()
     {
         
-
-
         //Recibir y bajar la ansiedad, toma la funcion desde el script SistemaAnsiedad
         if (!luzLinterna.enabled)
         {

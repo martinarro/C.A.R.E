@@ -11,7 +11,6 @@ public class InspecObjet : MonoBehaviour
 
     [SerializeField] public DetailObject detailObjectText;
     public bool isCounted = false;
-    // Start is called before the first frame update
     void Start()
     {
         objectInspect.SetActive(false);

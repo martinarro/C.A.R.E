@@ -6,6 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/EscenaJuego.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: 77f7337f73765d84e83a161a2a00c700
+  - enabled: 1
+    path: Assets/Scenes/MenuControles.unity
+    guid: 6cc2c75ec4f631541835b4ada079457f
+  - enabled: 1
+    path: Assets/Scenes/EscenaPrincipal.unity
+    guid: 623133a44e771cc4bbfb7b35013b08d0
+  - enabled: 1
+    path: Assets/Scenes/MenuDerrota.unity
+    guid: 8a8b6af3a91dc0449bc0939420e4d9a0
+  - enabled: 1
+    path: Assets/Scenes/MenuFinPrototipo.unity
+    guid: 2b2bebe061741c041a8145f9083fc62a
   m_configObjects: {}
