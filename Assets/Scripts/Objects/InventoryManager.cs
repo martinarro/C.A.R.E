@@ -23,10 +23,10 @@ public class InventoryManager : MonoBehaviour
     {
         ShowInventory();
 
-        if (countObject >= 4)
-        {
-            SceneManager.LoadScene("MenuFinPrototipo");
-        }
+        // if (countObject >= 4)
+        // {
+        //     SceneManager.LoadScene("MenuFinPrototipo");
+        // }
     }
 
     public void AddObject(GameObject objectFinded)

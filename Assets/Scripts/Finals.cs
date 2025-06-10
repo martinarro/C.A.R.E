@@ -6,27 +6,15 @@ using UnityEngine.SceneManagement;
 public class Finals : MonoBehaviour
 {
     public InventoryManager inventoryManager;
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Player") && (inventoryManager.countObject >= 4))
-        {
-            SceneManager.LoadScene("MenuFinPrototipo");
-        }
-        
-    }
-
+    public int minObject = 4;
 
     void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Player") && (inventoryManager.countObject >= minObject))
+        {
+            Debug.Log("Entre al if");
+            SceneManager.LoadScene("MenuFinPrototipo");
+        }
     }
+
 }
