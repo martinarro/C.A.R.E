@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using System.Security.Cryptography.X509Certificates;
 using UnityEngine.SceneManagement;
+using System;
 
 public class InventoryManager : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class InventoryManager : MonoBehaviour
     [SerializeField] public TextMeshProUGUI countText;
     [SerializeField] public TextMeshProUGUI detailObjectsTexts;
     [SerializeField] public GameObject listInventory;
+
+    public int itemsA = 0;
+    public int itemsB = 0;
 
     public bool isInventoryOpen = false;
     public int countObject = 0;
@@ -22,11 +26,6 @@ public class InventoryManager : MonoBehaviour
     void Update()
     {
         ShowInventory();
-
-        // if (countObject >= 4)
-        // {
-        //     SceneManager.LoadScene("MenuFinPrototipo");
-        // }
     }
 
     public void AddObject(GameObject objectFinded)
@@ -40,20 +39,43 @@ public class InventoryManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-                isInventoryOpen = !isInventoryOpen;
-                listInventory.SetActive(isInventoryOpen);
+            isInventoryOpen = !isInventoryOpen;
+            listInventory.SetActive(isInventoryOpen);
 
-                if (isInventoryOpen)
-                {
+            if (isInventoryOpen)
+            {
                 detailObjectsTexts.text = "";
-                    foreach (GameObject obj in inventory)
-                    {
+                foreach (GameObject obj in inventory)
+                {
                     DetailObject detalle = obj.GetComponent<DetailObject>();
                     Debug.Log(detalle.detailObject);
-                    detailObjectsTexts.text += "• " + detalle.detailObject + "\n";
 
-                    }
+                    detailObjectsTexts.text += "• " + detalle.detailObject + "\n";
                 }
+
+            }
         }
     }
+
+    public void Final()
+    {
+            foreach (GameObject obj in inventory)
+            {
+                DetailObject typeFinal = obj.GetComponent<DetailObject>();
+
+                if (typeFinal.typeFinal == "A")
+                {
+                    itemsA++;
+                }
+                else if (typeFinal.typeFinal == "B")
+                {
+                    itemsB++;
+                }
+            }
+
+            Debug.Log("Items A: " + itemsA);
+            Debug.Log("Items B: " + itemsB);
+    }
+        
+    
 }

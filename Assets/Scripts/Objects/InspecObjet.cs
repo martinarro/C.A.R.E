@@ -31,14 +31,13 @@ public class InspecObjet : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.E))
             {
+                Debug.Log("En colision para inspeccionar");
                 detailObject.SetActive(true);
                 objectInspect.SetActive(false);
                 if (isCounted == false)
                 {
                     inventoryManager.AddObject(gameObject);
-                    Debug.Log(inventoryManager.countObject);
                     isCounted = true;
-
                 }
                 
             }
