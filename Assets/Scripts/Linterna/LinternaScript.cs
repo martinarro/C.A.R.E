@@ -62,18 +62,6 @@ public class LinternaScript : MonoBehaviour
             }
         }
 
-    /*
-        //Ataque con linterna
-        RaycastHit hit;
-        if (Physics.Raycast(gameObject.transform.position, gameObject.transform.forward, out hit, rango))
-        {
-            if (hit.collider.GetComponent<NavMeshShadow>() == true)
-            {
-                hit.collider.GetComponent<NavMeshShadow>().enabled = false;
-                Destroy(hit.collider.gameObject, 1);
-            }
-        }
-        */
 
         //Define la velocidad de consumo y comienza la corrutina de parpadeo
             if (luzLinterna.enabled)

@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 3189387508637431507}
   - component: {fileID: 3646156767491839851}
   - component: {fileID: -7828223051294016785}
+  - component: {fileID: 5401443067483165081}
   m_Layer: 0
   m_Name: EnemyShadow
-  m_TagString: Untagged
+  m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -246,6 +247,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &5401443067483165081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1831231386295344396}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d8a53906edbe94eb6e85419b97e847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  posicionPlayer: {fileID: 0}
+  distanciaParaDanio: 2
+  sistemaAnsiedad: {fileID: 0}
 --- !u!1 &4930976479061423384
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,6 +16,8 @@ public class InventoryManager : MonoBehaviour
     public int itemsA = 0;
     public int itemsB = 0;
 
+    public string ultimoItem;
+
     public bool isInventoryOpen = false;
     public int countObject = 0;
     void Start()
@@ -71,7 +73,31 @@ public class InventoryManager : MonoBehaviour
                 {
                     itemsB++;
                 }
+
+                ultimoItem = typeFinal.typeFinal;
+                
             }
+
+                if (itemsA >itemsB)
+                {
+                    SceneManager.LoadScene("FinalA");
+                }
+                else if (itemsA == itemsB)
+                {
+                    if (ultimoItem == "A")
+                    {
+                        SceneManager.LoadScene("FinalA");
+                    }
+                    if (ultimoItem == "B")
+                    {
+                        SceneManager.LoadScene("FinalB");        
+                    }            
+                }
+
+                if (itemsB > itemsA)
+                {
+                    SceneManager.LoadScene("FinalB"); 
+                }
 
             Debug.Log("Items A: " + itemsA);
             Debug.Log("Items B: " + itemsB);

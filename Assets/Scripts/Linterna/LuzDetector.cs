@@ -23,13 +23,12 @@ public class LuzDetector : MonoBehaviour
         {
             Debug.Log(hit.collider.name);
 
-            NavMeshShadow enemigo = hit.collider.GetComponentInParent<NavMeshShadow>();
-            if (enemigo != null)
+            if (hit.collider.CompareTag("Enemigo"))
             {
-                Debug.Log("ENEMIGO");
-                enemigo.enabled = false;
-                Destroy(enemigo.gameObject, 1);
+                Destroy(hit.collider.gameObject, 1);
             }
+                
+            
         }
     }
 }

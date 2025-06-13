@@ -13,13 +13,12 @@ public class Finals : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && (inventoryManager.countObject >= minObject))
         {
-            Debug.Log("");
-            //SceneManager.LoadScene("MenuFinPrototipo");
+            SceneManager.LoadScene("MenuFinPrototipo");
         }
         else if (other.gameObject.CompareTag("Player") && (inventoryManager.countObject < minObject))
         {
-            //faltanElementos.SetActive(true);
-            inventoryManager.Final();
+            faltanElementos.SetActive(true);
+            //inventoryManager.Final();
         }
     }
 

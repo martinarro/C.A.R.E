@@ -8,6 +8,7 @@ TagManager:
   - escalera
   - Linterna
   - FinNivel1
+  - Enemigo
   layers:
   - Default
   - TransparentFX

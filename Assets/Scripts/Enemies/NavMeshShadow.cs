@@ -12,11 +12,10 @@ public class NavMeshShadow : MonoBehaviour
     [SerializeField] public float health = 100;
     public Transform actualPoint;
 
-
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        actualPoint = pointA;
+        actualPoint = pointA;            
     }
 
     // Update is called once per frame
@@ -37,18 +36,9 @@ public class NavMeshShadow : MonoBehaviour
 
             agent.SetDestination(actualPoint.position);
 
-        }
+        }    
+
 
     }
 
-    public void TakeDamage(float damage)
-    {
-        health -= damage;
-        if (health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    
 }
