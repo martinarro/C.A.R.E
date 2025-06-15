@@ -7,7 +7,7 @@ public class MenuSystem : MonoBehaviour
 {
     public void Jugar()
     {
-        SceneManager.LoadScene("EscenaPrincipal");
+        SceneManager.LoadScene("MenuCarga");
     }
 
     public void Controles()

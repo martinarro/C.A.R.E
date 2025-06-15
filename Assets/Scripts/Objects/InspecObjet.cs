@@ -41,12 +41,19 @@ public class InspecObjet : MonoBehaviour
                 }
                 
             }
-            
-             if (Input.GetKey(KeyCode.C))
-                {
-                    detailObject.SetActive(false);
-                    objectInspect.SetActive(true);
-                }
+
+            if (Input.GetKey(KeyCode.C))
+            {
+                detailObject.SetActive(false);
+                objectInspect.SetActive(false);
+
+                Renderer rend = GetComponent<Renderer>();
+                rend.enabled = false;
+
+                Collider col = GetComponent<Collider>();
+                col.enabled = false;  
+                
+            }
         }
     }
 
