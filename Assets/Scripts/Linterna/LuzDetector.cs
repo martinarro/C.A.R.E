@@ -25,7 +25,11 @@ public class LuzDetector : MonoBehaviour
 
             if (hit.collider.CompareTag("Enemigo"))
             {
-                Destroy(hit.collider.gameObject, 1);
+                RecibirDanio barra = hit.collider.GetComponent<RecibirDanio>();
+                if (barra != null)
+                {
+                    barra.RecibirLuz();
+                }
             }
                 
             
