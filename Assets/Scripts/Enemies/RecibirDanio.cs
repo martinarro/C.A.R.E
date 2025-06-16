@@ -11,6 +11,8 @@ public class RecibirDanio : MonoBehaviour
     private float tiempoActual = 0f;
     private bool estaIluminado = false;
 
+    public GameObject efectoMuerte;
+
     void Update()
     {
         if (estaIluminado)
@@ -42,6 +44,7 @@ public class RecibirDanio : MonoBehaviour
 
     void Morir()
     {
+        Instantiate(efectoMuerte, transform.position, Quaternion.identity);
         Destroy(gameObject);
     }
 }

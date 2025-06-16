@@ -277,7 +277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   barraRelleno: {fileID: 4796713782428156988}
-  tiempoVida: 3
+  tiempoVida: 2
+  efectoMuerte: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,
+    type: 3}
 --- !u!1 &2643825591278295545
 GameObject:
   m_ObjectHideFlags: 0
