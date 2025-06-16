@@ -9,6 +9,7 @@ TagManager:
   - Linterna
   - FinNivel1
   - Enemigo
+  - Inspeccionar
   layers:
   - Default
   - TransparentFX

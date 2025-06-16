@@ -22,6 +22,14 @@ public class Finals : MonoBehaviour
         }
     }
 
+    void OnTriggerStay(Collider other)
+    {
+        if (Input.GetKey(KeyCode.C))
+            {
+                faltanElementos.SetActive(false);
+            }
+    }
+
     void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))

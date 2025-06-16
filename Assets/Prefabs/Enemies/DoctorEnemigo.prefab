@@ -194,5 +194,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posicionPlayer: {fileID: 0}
   distanciaParaDanio: 2
-  objetoAInspeccionar: {fileID: 2184557087274502016, guid: d44d69bbd19fa4e47b5e20f3fea98d0d,
+  objetoAInspeccionar: {fileID: 6292993490315519125, guid: 07722808d9e13284b81f2d07e5ab7c62,
     type: 3}
+  fueInstanciado: 0
+  objectInspect: {fileID: 0}
+  detailObject: {fileID: 0}
+  inventoryManager: {fileID: 0}

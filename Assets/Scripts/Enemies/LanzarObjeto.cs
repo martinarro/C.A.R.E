@@ -7,7 +7,12 @@ public class LanzarObjeto : MonoBehaviour
     public Transform posicionPlayer;
     public float distanciaParaDanio = 2f;
     public GameObject objetoAInspeccionar;
-    public bool fueIntanciado = false;
+    public bool fueInstanciado = false;
+
+    //PARAMETROS PARA UI
+    [SerializeField] public GameObject objectInspect;
+    [SerializeField] public GameObject detailObject;
+    [SerializeField] public InventoryManager inventoryManager;
 
 
     // Start is called before the first frame update
@@ -22,10 +27,16 @@ public class LanzarObjeto : MonoBehaviour
     {
         float distancia = Vector3.Distance(transform.position, posicionPlayer.position);
 
-        if (distancia <= distanciaParaDanio && fueIntanciado == false)
+        if (distancia <= distanciaParaDanio && fueInstanciado == false)
         {
-           // Instantiate(objetoAInspeccionar, transform.position, transform.rotation);
-            fueIntanciado = true;
+            GameObject objeto = Instantiate(objetoAInspeccionar, transform.position, transform.rotation);
+
+            InspecObjet script = objeto.GetComponent<InspecObjet>();
+            script.objectInspect = objectInspect;
+            script.detailObject = detailObject;
+            script.inventoryManager = inventoryManager;
+
+            fueInstanciado = true;            
             Debug.Log("LANZO OBJETO");
         }
     }
