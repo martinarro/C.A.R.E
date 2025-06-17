@@ -6,8 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController player;
 
-    private float horizontalMove;
-    private float verticalMove;
+    private Animator anim;
+
+    public float horizontalMove;
+    public float verticalMove;
     public float playerSpeed;
     public float gravity = 9.8f;
     public float fallVelocity;
@@ -23,6 +25,8 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        anim = GetComponent<Animator>();
+
         //Bloquear cursor durante el Play
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -32,6 +36,9 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        anim.SetFloat("VelX", horizontalMove);
+        anim.SetFloat("VelY", verticalMove);
+
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
 
