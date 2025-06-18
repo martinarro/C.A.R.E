@@ -8,27 +8,35 @@ public class DarAnsiedadAPlayer : MonoBehaviour
     public float distanciaParaDanio = 2f;
     public float cantidadAnsiedad;
 
-    private SistemaAnsiedad sistemaAnsiedadJugador;
+    public SistemaAnsiedad sistemaAnsiedadJugador;
 
     void Start()
     {
         GameObject player = GameObject.FindWithTag("Player");
+       
         if (player != null)
         {
-            posicionPlayer = player.transform;
-            sistemaAnsiedadJugador = player.GetComponent<SistemaAnsiedad>();
-
-            if (sistemaAnsiedadJugador != null)
-            {
-                Debug.Log("Obtuve sistema de ansiedad");
-            }
+            Debug.Log("Obtuve al player");
         }
+
+        posicionPlayer = player.transform;
+        sistemaAnsiedadJugador = FindObjectOfType<SistemaAnsiedad>();
+
+
+
+        if (sistemaAnsiedadJugador != null)
+        {
+            Debug.Log("Obtuve sistema de ansiedad");
+        }
+        else
+        {
+            Debug.Log("No obtuve el sistema de ansiedad");
+        }
+        
     }
 
     void Update()
     {
-        if (posicionPlayer == null || sistemaAnsiedadJugador == null) return;
-
         float distancia = Vector3.Distance(transform.position, posicionPlayer.position);
 
         if (distancia <= distanciaParaDanio)

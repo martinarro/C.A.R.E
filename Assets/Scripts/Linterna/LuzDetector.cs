@@ -21,7 +21,7 @@ public class LuzDetector : MonoBehaviour
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, rango, ~0))
         {
-            Debug.Log(hit.collider.name);
+            //Debug.Log(hit.collider.name);
 
             if (hit.collider.CompareTag("Enemigo"))
             {

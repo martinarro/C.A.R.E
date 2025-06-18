@@ -32,7 +32,7 @@ public class RecibirDanio : MonoBehaviour
         }
 
         if (barraRelleno != null)
-            barraRelleno.fillAmount = tiempoActual / tiempoVida;
+            barraRelleno.fillAmount = 1f - tiempoActual / tiempoVida;
 
         estaIluminado = false; 
     }
