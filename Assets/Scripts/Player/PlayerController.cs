@@ -6,10 +6,10 @@ public class PlayerController : MonoBehaviour
 {
     public CharacterController player;
 
-    private Animator anim;
-
+    public Animator animator;
     public float horizontalMove;
     public float verticalMove;
+
     public float playerSpeed;
     public float gravity = 9.8f;
     public float fallVelocity;
@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        anim = GetComponent<Animator>();
 
         //Bloquear cursor durante el Play
         Cursor.lockState = CursorLockMode.Locked;
@@ -36,8 +35,6 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        anim.SetFloat("VelX", horizontalMove);
-        anim.SetFloat("VelY", verticalMove);
 
         horizontalMove = Input.GetAxis("Horizontal");
         verticalMove = Input.GetAxis("Vertical");
@@ -58,6 +55,9 @@ public class PlayerController : MonoBehaviour
         PlayerSkills();
 
         player.Move(movePlayer * Time.deltaTime);
+
+        animator.SetFloat("VelX", horizontalMove);
+        animator.SetFloat("VelY", verticalMove);
     }
 
     //Funcion para la direccion de la camara.
