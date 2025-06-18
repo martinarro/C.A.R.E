@@ -263,7 +263,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posicionPlayer: {fileID: 0}
   distanciaParaDanio: 2
-  sistemaAnsiedad: {fileID: 0}
+  cantidadAnsiedad: 50
 --- !u!114 &7730511933060394960
 MonoBehaviour:
   m_ObjectHideFlags: 0

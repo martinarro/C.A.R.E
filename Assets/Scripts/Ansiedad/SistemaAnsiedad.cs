@@ -17,6 +17,7 @@ public class SistemaAnsiedad : MonoBehaviour
 
     private void Update()
     {
+
         ActualizarInterfaz();
 
         if (ansiedad < 0)

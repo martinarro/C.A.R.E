@@ -6,26 +6,34 @@ public class DarAnsiedadAPlayer : MonoBehaviour
 {
     public Transform posicionPlayer;
     public float distanciaParaDanio = 2f;
-    public SistemaAnsiedad sistemaAnsiedad;
+    public float cantidadAnsiedad;
 
+    private SistemaAnsiedad sistemaAnsiedadJugador;
 
-    // Start is called before the first frame update
     void Start()
     {
         GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            posicionPlayer = player.transform;
+            sistemaAnsiedadJugador = player.GetComponent<SistemaAnsiedad>();
 
-        posicionPlayer = player.transform;
-        sistemaAnsiedad = player.GetComponent<SistemaAnsiedad>();
+            if (sistemaAnsiedadJugador != null)
+            {
+                Debug.Log("Obtuve sistema de ansiedad");
+            }
+        }
     }
 
-    // Update is called once per frame
     void Update()
     {
+        if (posicionPlayer == null || sistemaAnsiedadJugador == null) return;
+
         float distancia = Vector3.Distance(transform.position, posicionPlayer.position);
 
         if (distancia <= distanciaParaDanio)
         {
-            //sistemaAnsiedad.RecibirAnsiedad(1000);
+            sistemaAnsiedadJugador.ansiedad += 500 * Time.deltaTime; //Con esto se regula la cantidad de anisedad que el enemigo causa.
             Debug.Log("LE HAGO DAÑO");
         }
     }
