@@ -8,18 +8,34 @@ public class Finals : MonoBehaviour
     public InventoryManager inventoryManager;
     public GameObject faltanElementos;
     public int minObject = 4;
+    public GameObject player;
+    public Transform spawnANivl2;
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player") && (inventoryManager.countObject >= minObject))
+        if (other.gameObject.CompareTag("Player") && inventoryManager.countObject >= minObject)
         {
-            SceneManager.LoadScene("MenuFinPrototipo");
+
+            CharacterController cc = player.GetComponent<CharacterController>();
+            if (cc != null)
+            {
+                cc.enabled = false; // Desactiva antes de mover
+            }
+
+            player.transform.position = spawnANivl2.position;
+
+            if (cc != null)
+            {
+                cc.enabled = true; // Reactiva despues de mover
+            }
+
+            GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
+                foreach (GameObject enemigo in enemigos)
+                {
+                    Destroy(enemigo);
+                }
         }
-        else if (other.gameObject.CompareTag("Player") && (inventoryManager.countObject < minObject))
-        {
-            faltanElementos.SetActive(true);
-            //inventoryManager.Final();
-        }
+
     }
 
     void OnTriggerStay(Collider other)
