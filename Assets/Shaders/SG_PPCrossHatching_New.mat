@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: SG_PPCrossHatching_New
+  m_Shader: {fileID: -6465566751694194690, guid: 848e2769e7ec3c4448e934cadd7661e0,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _Triplanar_3d4e64a6a4af4c39ab76e225ed087a97_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 9347aa1fb4de92f45ae3245f7606e730, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Triplanar_50d6d3cb15dd472f9dc4faa57673652a_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: b2efcf3692b61a84eabae47052a85eb1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Triplanar_d15bd68d710841e68ef91db6fcb18b7a_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: 370a4e53c7180b54cb7ab1afd9f601c1, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Float: 0.77
+    - _StepA: 0.63
+    - _StepB: 0.37
+    - _StepC: 0.24
+    - _TilingA: 0.8
+    - _TilingB: 3
+    - _TilingC: 1.8
+    m_Colors: []
+  m_BuildTextureStacks: []
