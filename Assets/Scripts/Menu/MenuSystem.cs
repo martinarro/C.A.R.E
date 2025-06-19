@@ -20,6 +20,11 @@ public class MenuSystem : MonoBehaviour
         SceneManager.LoadScene("MenuPrincipal");
     }
 
+    public void BotonAjustes()
+    {
+        SceneManager.LoadScene("MenuAjustes");
+    }
+
     public void Salir()
     {
         Application.Quit();
