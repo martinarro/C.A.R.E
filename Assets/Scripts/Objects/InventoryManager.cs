@@ -108,14 +108,14 @@ public class InventoryManager : MonoBehaviour
         if (itemsA > itemsB)
         {
             Debug.Log("CINEMATICA AAAAAAAAAAA");
-            //SceneManager.LoadScene("FinalA");
+            SceneManager.LoadScene("FinalA");
         }
         else if (itemsA == itemsB)
         {
             if (ultimoItem == "A")
             {
                 Debug.Log("CINEMATICA AAAAAAAAAAA");
-                //SceneManager.LoadScene("FinalA");
+                SceneManager.LoadScene("FinalA");
             }
             if (ultimoItem == "B")
             {

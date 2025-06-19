@@ -9,6 +9,8 @@ public class FinalJuego : MonoBehaviour
     public GameObject faltanElementos;
     public int minObject;
     public GameObject player;
+    public GameObject mensajeReproducir;
+    public bool puedeReproducir = false;
 
     void OnTriggerEnter(Collider other)
     {
@@ -23,7 +25,8 @@ public class FinalJuego : MonoBehaviour
             inventoryManager.TieneContrasenia();
             if (inventoryManager.TieneContrasenia())
             {
-                inventoryManager.Final();
+                mensajeReproducir.SetActive(true);
+                puedeReproducir = true;
             }
         }
         else
@@ -37,9 +40,18 @@ public class FinalJuego : MonoBehaviour
     void OnTriggerStay(Collider other)
     {
         if (Input.GetKey(KeyCode.C))
-            {
-                faltanElementos.SetActive(false);
-            }
+        {
+            faltanElementos.SetActive(false);
+        }
+
+         if (puedeReproducir && Input.GetKeyDown(KeyCode.R))
+        {
+            inventoryManager.Final();
+            puedeReproducir = false; 
+        }
+        
+        
+        
     }
 
     void OnTriggerExit(Collider other)
@@ -47,7 +59,10 @@ public class FinalJuego : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             faltanElementos.SetActive(false);
+            mensajeReproducir.SetActive(false);
+            puedeReproducir = false;
         }
+        
     }
 
 }

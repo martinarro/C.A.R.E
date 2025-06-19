@@ -29,4 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MenuCarga.unity
     guid: 22adf99c5b1de774fb9184f2d3bbdcdd
+  - enabled: 1
+    path: Assets/Scenes/FinalA.unity
+    guid: ac74359c5be3a7d4db92afef27626599
+  - enabled: 1
+    path: Assets/Scenes/FinalB.unity
+    guid: a94b54102b28a7c41a1f55218246dc31
   m_configObjects: {}
