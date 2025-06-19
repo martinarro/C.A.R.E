@@ -30,10 +30,14 @@ public class Finals : MonoBehaviour
             }
 
             GameObject[] enemigos = GameObject.FindGameObjectsWithTag("Enemigo");
-                foreach (GameObject enemigo in enemigos)
-                {
-                    Destroy(enemigo);
-                }
+            foreach (GameObject enemigo in enemigos)
+            {
+                Destroy(enemigo);
+            }
+        }
+        else
+        {
+            faltanElementos.SetActive(true);
         }
 
     }

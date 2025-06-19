@@ -15,6 +15,7 @@ public class InventoryManager : MonoBehaviour
 
     public int itemsA = 0;
     public int itemsB = 0;
+    public bool contrasenia = false;
 
     public string ultimoItem;
 
@@ -58,49 +59,79 @@ public class InventoryManager : MonoBehaviour
             }
         }
     }
+    
+    public bool TieneContrasenia()
+{
+    foreach (GameObject obj in inventory)
+    {
+        DetailObject detalle = obj.GetComponent<DetailObject>();
+        if (detalle.detailObject == "Contraseña")
+        {
+            contrasenia = true;
+            return true;
+        }
+    }
+
+    contrasenia = false;
+    return false;
+}
 
     public void Final()
     {
-            foreach (GameObject obj in inventory)
+        foreach (GameObject obj in inventory)
+        {
+            DetailObject typeFinal = obj.GetComponent<DetailObject>();
+
+
+            if (typeFinal.typeFinal == "A")
             {
-                DetailObject typeFinal = obj.GetComponent<DetailObject>();
-
-                if (typeFinal.typeFinal == "A")
-                {
-                    itemsA++;
-                }
-                else if (typeFinal.typeFinal == "B")
-                {
-                    itemsB++;
-                }
-
-                ultimoItem = typeFinal.typeFinal;
-                
+                Debug.Log("SUMO A");
+                itemsA++;
+                ultimoItem = "A";
+            }
+            else if (typeFinal.typeFinal == "B")
+            {
+                itemsB++;
+                ultimoItem = "B";
+            }
+            else if (typeFinal.typeFinal == "AB")
+            {
+                itemsA++;
+                itemsB++;
+                Debug.Log("SUME AMBOS");
             }
 
-                if (itemsA >itemsB)
-                {
-                    SceneManager.LoadScene("FinalA");
-                }
-                else if (itemsA == itemsB)
-                {
-                    if (ultimoItem == "A")
-                    {
-                        SceneManager.LoadScene("FinalA");
-                    }
-                    if (ultimoItem == "B")
-                    {
-                        SceneManager.LoadScene("FinalB");        
-                    }            
-                }
 
-                if (itemsB > itemsA)
-                {
-                    SceneManager.LoadScene("FinalB"); 
-                }
 
-            Debug.Log("Items A: " + itemsA);
-            Debug.Log("Items B: " + itemsB);
+        }
+
+        if (itemsA > itemsB)
+        {
+            Debug.Log("CINEMATICA AAAAAAAAAAA");
+            //SceneManager.LoadScene("FinalA");
+        }
+        else if (itemsA == itemsB)
+        {
+            if (ultimoItem == "A")
+            {
+                Debug.Log("CINEMATICA AAAAAAAAAAA");
+                //SceneManager.LoadScene("FinalA");
+            }
+            if (ultimoItem == "B")
+            {
+                Debug.Log("CINEMATICA BBBBBBBBBBBB");
+                //SceneManager.LoadScene("FinalB");        
+            }
+        }
+
+        if (itemsB > itemsA)
+        {
+            Debug.Log("CINEMATICA BBBBBBBBBBBB");
+            SceneManager.LoadScene("FinalB");
+        }
+
+        Debug.Log("Items A: " + itemsA);
+        Debug.Log("Items B: " + itemsB);
     }
         
     

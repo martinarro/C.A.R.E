@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 6907850112289252284}
   - component: {fileID: -5958911473762789409}
   m_Layer: 0
-  m_Name: "Ni\xF1aEnemigo"
+  m_Name: DoctorLanzador
   m_TagString: Enemigo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -161,8 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   barraRelleno: {fileID: 7529365380234180367}
   tiempoVida: 2
-  efectoMuerte: {fileID: 1828176872806910, guid: 64891a0eb28db934898420d80ca07cb3,
-    type: 3}
 --- !u!195 &6907850112289252284
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -199,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posicionPlayer: {fileID: 0}
   distanciaParaDanio: 2
-  objetoAInspeccionar: {fileID: 6292993490315519125, guid: 07722808d9e13284b81f2d07e5ab7c62,
+  objetoAInspeccionar: {fileID: 6292993490315519125, guid: ac3c80e7f4c2482449fbedb59e6b7a0b,
     type: 3}
   fueInstanciado: 0
   objectInspect: {fileID: 0}
