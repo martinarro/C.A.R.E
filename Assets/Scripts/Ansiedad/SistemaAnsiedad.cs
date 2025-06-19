@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class SistemaAnsiedad : MonoBehaviour
 {
+    public AudioClip clip;
+    public AudioSource audioSource;
 
     [Header("Valores")]
     public float ansiedad;
@@ -14,6 +16,13 @@ public class SistemaAnsiedad : MonoBehaviour
     [Header("Interfaz")]
     public Image BarraAnsiedad;
     public CanvasGroup Overlay;
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.clip = clip;
+    }
 
     private void Update()
     {
@@ -29,17 +38,23 @@ public class SistemaAnsiedad : MonoBehaviour
             ansiedad = ansiedadMaxima;
         }
 
-        if (ansiedad < 1000)
+        if (ansiedad > 1200 && !audioSource.isPlaying)
         {
-            Overlay.alpha = 0f;
+            audioSource.Play();
         }
 
-        if (ansiedad > 1000 && ansiedad < 1249)
+        if (ansiedad < 1300)
+        {
+            Overlay.alpha = 0f;
+            audioSource.Stop();
+        }
+
+        if (ansiedad > 1300 && ansiedad < 1549)
         {
             Overlay.alpha = 0.7f;
         }
 
-        if (ansiedad > 1250)
+        if (ansiedad > 1750)
         {
             Overlay.alpha = 1f;
         }

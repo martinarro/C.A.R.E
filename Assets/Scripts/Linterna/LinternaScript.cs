@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class LinternaScript : MonoBehaviour
 {
+    public AudioClip clip;
+    public AudioSource audioSource;
+
     public Light luzLinterna;
 
     [Header("Ansiedad")]
@@ -33,6 +36,12 @@ public class LinternaScript : MonoBehaviour
     public int rango = 8;
     */
 
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+
+        audioSource.clip = clip;
+    }
 
     void Update()
     {
@@ -50,6 +59,9 @@ public class LinternaScript : MonoBehaviour
         //Input de teclado
         if (Input.GetMouseButtonDown(0))
         {
+            // Reproducir una vez
+            audioSource.Play();
+
             if (luzLinterna.enabled)
             {
                 luzLinterna.enabled = false;
