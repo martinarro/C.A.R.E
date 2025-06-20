@@ -15,7 +15,7 @@ public class ManejoDeVideo : MonoBehaviour
         Debug.Log(time);
         if (time >= timeForPlay)
         {
-            //SceneManager.LoadScene("Creditos");
+            SceneManager.LoadScene("Creditos");
         }    
     }
 }
