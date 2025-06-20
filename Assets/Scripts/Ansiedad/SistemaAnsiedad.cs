@@ -38,23 +38,23 @@ public class SistemaAnsiedad : MonoBehaviour
             ansiedad = ansiedadMaxima;
         }
 
-        if (ansiedad > 1200 && !audioSource.isPlaying)
+        if (ansiedad > 2200 && !audioSource.isPlaying)
         {
             audioSource.Play();
         }
 
-        if (ansiedad < 1300)
+        if (ansiedad < 2300)
         {
             Overlay.alpha = 0f;
             audioSource.Stop();
         }
 
-        if (ansiedad > 1300 && ansiedad < 1549)
+        if (ansiedad > 2300 && ansiedad < 2549)
         {
             Overlay.alpha = 0.7f;
         }
 
-        if (ansiedad > 1750)
+        if (ansiedad > 2500)
         {
             Overlay.alpha = 1f;
         }

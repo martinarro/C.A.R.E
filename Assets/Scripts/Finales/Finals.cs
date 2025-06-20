@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Finals : MonoBehaviour
 {
+    public LinternaScript linternaScript;
+    public SistemaAnsiedad sistemaAnsiedad;
     public InventoryManager inventoryManager;
     public GameObject faltanElementos;
     public int minObject = 4;
@@ -34,6 +36,9 @@ public class Finals : MonoBehaviour
             {
                 Destroy(enemigo);
             }
+
+            linternaScript.energiaActual = linternaScript.energiaMaxima;
+            sistemaAnsiedad.ansiedad = 0;
         }
         else
         {

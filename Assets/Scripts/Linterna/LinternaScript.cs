@@ -16,8 +16,8 @@ public class LinternaScript : MonoBehaviour
     public float descargaAnsiedad;
 
     [Header("Bateria")]
-    public float energiaActual = 100;
-    public float energiaMaxima = 100;
+    public float energiaActual = 200;
+    public float energiaMaxima = 200;
     public float velocidadConsumo;
     public float velocidadRecarga;
 
