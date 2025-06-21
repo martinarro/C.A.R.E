@@ -5138,7 +5138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c92cae66603fb646896ceb01b94c8af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeFinal: A
+  typeFinal: B
   detailObject: Informe psiquiatrico
 --- !u!114 &663186456
 MonoBehaviour:
@@ -6799,7 +6799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c92cae66603fb646896ceb01b94c8af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeFinal: A
+  typeFinal: B
   detailObject: Doc. Proyec. Memorial
 --- !u!114 &913100191
 MonoBehaviour:
@@ -12112,7 +12112,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c92cae66603fb646896ceb01b94c8af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeFinal: A
+  typeFinal: B
   detailObject: Nota manuscritca
 --- !u!114 &1583278541
 MonoBehaviour:
@@ -12900,7 +12900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c92cae66603fb646896ceb01b94c8af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typeFinal: A
+  typeFinal: B
   detailObject: Fotografia arruinada
 --- !u!114 &1634665122
 MonoBehaviour:
