@@ -10,6 +10,7 @@ public class FinalJuego : MonoBehaviour
     public int minObject;
     public GameObject player;
     public GameObject mensajeReproducir;
+    public GameObject mensajeFaltaContraseña;
     public bool puedeReproducir = false;
 
     void OnTriggerEnter(Collider other)
@@ -22,11 +23,10 @@ public class FinalJuego : MonoBehaviour
         if (other.gameObject.CompareTag("Player") && inventoryManager.countObject >= minObject)
         {
             Debug.Log("Entre al if del final");
-            inventoryManager.TieneContrasenia();
-            if (inventoryManager.TieneContrasenia())
+            puedeReproducir = inventoryManager.TieneContrasenia();
+            if (puedeReproducir)
             {
                 mensajeReproducir.SetActive(true);
-                puedeReproducir = true;
             }
         }
         else
@@ -44,11 +44,24 @@ public class FinalJuego : MonoBehaviour
             faltanElementos.SetActive(false);
         }
 
-         if (puedeReproducir && Input.GetKeyDown(KeyCode.R))
+        if (puedeReproducir == false && Input.GetKeyDown(KeyCode.R))
+        {
+            mensajeFaltaContraseña.SetActive(true);
+
+        }
+
+         if (Input.GetKeyDown(KeyCode.C))
+            {
+                mensajeFaltaContraseña.SetActive(false);
+            }
+
+        if (puedeReproducir && Input.GetKeyDown(KeyCode.R))
         {
             inventoryManager.Final();
-            puedeReproducir = false; 
+            puedeReproducir = false;
         }
+            
+        
         
         
         

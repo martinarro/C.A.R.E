@@ -15,6 +15,9 @@ public class InventoryManager : MonoBehaviour
 
     public int itemsA = 0;
     public int itemsB = 0;
+
+    public int controlItemA = 0;
+    public int controlItemB = 0;
     public bool contrasenia = false;
 
     public string ultimoItem;
@@ -48,15 +51,39 @@ public class InventoryManager : MonoBehaviour
             if (isInventoryOpen)
             {
                 detailObjectsTexts.text = "";
+
+                controlItemA = 0; 
+                controlItemB = 0;
+
                 foreach (GameObject obj in inventory)
                 {
                     DetailObject detalle = obj.GetComponent<DetailObject>();
                     Debug.Log(detalle.detailObject);
 
                     detailObjectsTexts.text += "• " + detalle.detailObject + "\n";
+
+
+                    if (detalle.typeFinal == "A")
+                    {
+                        controlItemA++;
+                    }
+                    else if (detalle.typeFinal == "B")
+                    {
+                        controlItemB++;
+                    }
+                    else if (detalle.typeFinal == "AB")
+                    {
+                        controlItemA++;
+                        controlItemB++;
+                    }
                 }
 
+                Debug.Log("ITEMS A TOTALES: " + controlItemA);
+                Debug.Log("ITEMS B TOTALES: " + controlItemB);
+
             }
+
+            
         }
     }
     
@@ -120,7 +147,11 @@ public class InventoryManager : MonoBehaviour
             if (ultimoItem == "B")
             {
                 Debug.Log("CINEMATICA BBBBBBBBBBBB");
-                //SceneManager.LoadScene("FinalB");        
+                SceneManager.LoadScene("FinalB");
+            }
+            if (ultimoItem == "AB")
+            {
+                
             }
         }
 
